@@ -1,0 +1,11 @@
+C:\Users\Monster\source\repos\HRProject\Project.ENTİTİES\bin\Debug\Project.ENTİTİES.dll
+C:\Users\Monster\source\repos\HRProject\Project.ENTİTİES\bin\Debug\Project.ENTİTİES.pdb
+C:\Users\Monster\source\repos\HRProject\Project.ENTİTİES\obj\Debug\Project.ENTİTİES.csproj.CoreCompileInputs.cache
+C:\Users\Monster\source\repos\HRProject\Project.ENTİTİES\obj\Debug\Project.ENTİTİES.dll
+C:\Users\Monster\source\repos\HRProject\Project.ENTİTİES\obj\Debug\Project.ENTİTİES.pdb
+C:\Users\Monster\Desktop\HRProject\Project.ENTİTİES\bin\Debug\Project.ENTİTİES.dll
+C:\Users\Monster\Desktop\HRProject\Project.ENTİTİES\bin\Debug\Project.ENTİTİES.pdb
+C:\Users\Monster\Desktop\HRProject\Project.ENTİTİES\obj\Debug\Project.ENTİTİES.csproj.AssemblyReference.cache
+C:\Users\Monster\Desktop\HRProject\Project.ENTİTİES\obj\Debug\Project.ENTİTİES.csproj.CoreCompileInputs.cache
+C:\Users\Monster\Desktop\HRProject\Project.ENTİTİES\obj\Debug\Project.ENTİTİES.dll
+C:\Users\Monster\Desktop\HRProject\Project.ENTİTİES\obj\Debug\Project.ENTİTİES.pdb

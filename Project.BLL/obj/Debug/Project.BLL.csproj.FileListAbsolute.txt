@@ -1,0 +1,14 @@
+C:\Users\Monster\source\repos\HRProject\Project.BLL\bin\Debug\Project.BLL.dll.config
+C:\Users\Monster\source\repos\HRProject\Project.BLL\bin\Debug\Project.BLL.dll
+C:\Users\Monster\source\repos\HRProject\Project.BLL\bin\Debug\Project.BLL.pdb
+C:\Users\Monster\source\repos\HRProject\Project.BLL\bin\Debug\EntityFramework.dll
+C:\Users\Monster\source\repos\HRProject\Project.BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Monster\source\repos\HRProject\Project.BLL\bin\Debug\Project.ENTİTİES.dll
+C:\Users\Monster\source\repos\HRProject\Project.BLL\bin\Debug\Project.ENTİTİES.pdb
+C:\Users\Monster\source\repos\HRProject\Project.BLL\bin\Debug\EntityFramework.xml
+C:\Users\Monster\source\repos\HRProject\Project.BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Monster\source\repos\HRProject\Project.BLL\obj\Debug\Project.BLL.csproj.AssemblyReference.cache
+C:\Users\Monster\source\repos\HRProject\Project.BLL\obj\Debug\Project.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Monster\source\repos\HRProject\Project.BLL\obj\Debug\Project.BLL.csproj.CopyComplete
+C:\Users\Monster\source\repos\HRProject\Project.BLL\obj\Debug\Project.BLL.dll
+C:\Users\Monster\source\repos\HRProject\Project.BLL\obj\Debug\Project.BLL.pdb
