@@ -12,7 +12,6 @@ namespace Project.MAP.Maps
         public ExpenseMap()
         {
             ToTable("Expenses");
-            Ignore(x => x.ID).HasKey(x => new {x.EmployeeID } );
             Property(x => x.Amount).HasColumnName("Amount").IsRequired();
             Property(x => x.Description).IsOptional();
         }

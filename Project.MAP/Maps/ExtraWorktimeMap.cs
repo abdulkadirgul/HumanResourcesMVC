@@ -12,7 +12,6 @@ namespace Project.MAP.Maps
         public ExtraWorktimeMap()
         {
             ToTable("ExtraWorktimes");
-            //Ignore(x => x.ID).HasKey(x=> new {x.EmployeeID });
             Property(x => x.StartDate).HasColumnName("StartDate").IsRequired();
             Property(x => x.EndTime).HasColumnName("EndDate").IsRequired();
             Property(x => x.Description).IsOptional();

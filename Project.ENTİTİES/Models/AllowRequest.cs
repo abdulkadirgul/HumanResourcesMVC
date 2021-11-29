@@ -27,8 +27,10 @@ namespace Project.ENTİTİES.Models
         [Display(Name = "İzin Bitiş Tarihi")]
         public DateTime EndDate { get; set; }
 
+        [Display(Name ="Durumu")]
         public State State { get; set; }
 
+        [Display(Name ="İzin Türü")]
         public AllowType AllowType { get; set; }
 
         private byte totalAllowTime;

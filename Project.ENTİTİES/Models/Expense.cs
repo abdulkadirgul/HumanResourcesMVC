@@ -17,7 +17,7 @@ namespace Project.ENTİTİES.Models
         [Display(Name ="Masraf Miktarı")]
         public double Amount { get; set; }
 
-        public bool IsCOnfirmed { get; set; }
+        public bool IsConfirmed { get; set; }
         public State State { get; set; }
 
         //Bir masraf bir çalışana aittir - Navigation

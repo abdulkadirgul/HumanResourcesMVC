@@ -3,3 +3,9 @@ C:\Users\Monster\source\repos\HRProject\Project.COMMON\bin\Debug\Project.COMMON.
 C:\Users\Monster\source\repos\HRProject\Project.COMMON\obj\Debug\Project.COMMON.csproj.CoreCompileInputs.cache
 C:\Users\Monster\source\repos\HRProject\Project.COMMON\obj\Debug\Project.COMMON.dll
 C:\Users\Monster\source\repos\HRProject\Project.COMMON\obj\Debug\Project.COMMON.pdb
+C:\Users\Monster\Desktop\HumanResProject\Project.COMMON\bin\Debug\Project.COMMON.dll
+C:\Users\Monster\Desktop\HumanResProject\Project.COMMON\bin\Debug\Project.COMMON.pdb
+C:\Users\Monster\Desktop\HumanResProject\Project.COMMON\obj\Debug\Project.COMMON.csproj.AssemblyReference.cache
+C:\Users\Monster\Desktop\HumanResProject\Project.COMMON\obj\Debug\Project.COMMON.csproj.CoreCompileInputs.cache
+C:\Users\Monster\Desktop\HumanResProject\Project.COMMON\obj\Debug\Project.COMMON.dll
+C:\Users\Monster\Desktop\HumanResProject\Project.COMMON\obj\Debug\Project.COMMON.pdb

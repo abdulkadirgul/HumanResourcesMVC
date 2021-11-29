@@ -9,3 +9,9 @@ C:\Users\Monster\Desktop\HRProject\Project.ENTİTİES\obj\Debug\Project.ENTİTİ
 C:\Users\Monster\Desktop\HRProject\Project.ENTİTİES\obj\Debug\Project.ENTİTİES.csproj.CoreCompileInputs.cache
 C:\Users\Monster\Desktop\HRProject\Project.ENTİTİES\obj\Debug\Project.ENTİTİES.dll
 C:\Users\Monster\Desktop\HRProject\Project.ENTİTİES\obj\Debug\Project.ENTİTİES.pdb
+C:\Users\Monster\Desktop\HumanResProject\Project.ENTİTİES\bin\Debug\Project.ENTİTİES.dll
+C:\Users\Monster\Desktop\HumanResProject\Project.ENTİTİES\bin\Debug\Project.ENTİTİES.pdb
+C:\Users\Monster\Desktop\HumanResProject\Project.ENTİTİES\obj\Debug\Project.ENTİTİES.csproj.CoreCompileInputs.cache
+C:\Users\Monster\Desktop\HumanResProject\Project.ENTİTİES\obj\Debug\Project.ENTİTİES.dll
+C:\Users\Monster\Desktop\HumanResProject\Project.ENTİTİES\obj\Debug\Project.ENTİTİES.pdb
+C:\Users\Monster\Desktop\HumanResProject\Project.ENTİTİES\obj\Debug\Project.ENTİTİES.csproj.AssemblyReference.cache

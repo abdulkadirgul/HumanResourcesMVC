@@ -12,7 +12,6 @@ namespace Project.MAP.Maps
         public AllowRequestMap()
         {
             ToTable("AllowRequests");
-            //Ignore(x => x.ID).HasKey(x => new { x.EmployeeID});
             Property(x => x.AllowType).IsRequired();
             Property(x => x.CompanyDescription).IsOptional();
             Property(x => x.Description).IsOptional();

@@ -1,5 +1,7 @@
 ﻿namespace Project.DAL.Migrations
 {
+    using Project.ENTİTİES.Enums;
+    using Project.ENTİTİES.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -14,10 +16,12 @@
 
         protected override void Seed(Project.DAL.Context.AppContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
-            //  to avoid creating duplicate seed data.
+            if(!context.CompanyAdmins.Any() )
+            {
+                context.CompanyAdmins.Add(
+                    new CompanyAdmin { Role = UserRole.Admin, Email = "admin@admin.com", Password="admin" });
+            }
+            
         }
     }
 }

@@ -15,14 +15,14 @@ namespace WebUI.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Uygulama Açıklama Sayfası";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "İletişim Sayfası";
 
             return View();
         }

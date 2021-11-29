@@ -1,0 +1,130 @@
+﻿@model IEnumerable<Project.ENTİTİES.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Administrator/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DrivingLicense.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeCard.TCKNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TCKNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SGKNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.İseBaslama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CheckInTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CheckInOutTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AllowRequestID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdvancePaymentID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpenseID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExtraWorktimeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeletedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DrivingLicense.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeCard.TCKNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TCKNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SGKNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.İseBaslama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CheckInTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CheckInOutTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AllowRequestID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdvancePaymentID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpenseID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExtraWorktimeID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeletedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

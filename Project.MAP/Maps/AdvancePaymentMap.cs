@@ -13,7 +13,6 @@ namespace Project.MAP.Maps
         public AdvancePaymentMap()
         {
             ToTable("AdvancePayment");
-            //Ignore(x => x.ID).HasKey(x => new { x.EmployeeID });
             Property(x => x.AdvancePaymentType).IsRequired();
             Property(x => x.Description).IsOptional();
         

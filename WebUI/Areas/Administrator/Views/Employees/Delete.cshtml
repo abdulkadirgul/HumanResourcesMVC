@@ -1,0 +1,161 @@
+﻿@model Project.ENTİTİES.Models.Employee
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Administrator/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DrivingLicense.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DrivingLicense.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeCard.TCKNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeCard.TCKNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TCKNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TCKNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SGKNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SGKNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.İseBaslama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.İseBaslama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckInTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckInTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckInOutTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckInOutTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllowRequestID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllowRequestID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdvancePaymentID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdvancePaymentID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpenseID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpenseID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExtraWorktimeID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExtraWorktimeID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeletedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeletedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

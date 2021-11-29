@@ -31,7 +31,7 @@ namespace Project.ENTİTİES.Models
         public string EnrollmentNo { get; set; }
         public string MotherLastName { get; set; }
 
-        //public int EmployeeID { get; set; }
+    
         public virtual List<Employee> Employee { get; set; }
        
     }

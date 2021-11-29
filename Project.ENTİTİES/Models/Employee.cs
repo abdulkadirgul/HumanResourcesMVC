@@ -14,9 +14,15 @@ namespace Project.ENTİTİES.Models
         [Required(ErrorMessage ="TC Kimlik No Girilmesi Zorunludur!")]
         [Display(Name ="TC Kimlik No")]
         public string TCKNo { get; set; }
+
+        [Display(Name ="Adı")]
         public string FirstName { get; set; }
+
+        [Display(Name = "Soyadı")]
         public string LastName { get; set; }
         public string SGKNo { get; set; }
+
+        [Display(Name ="İşe Başlama Tarihi")]
         public DateTime İseBaslama { get; set; }
 
         [Display(Name ="Giriş Zamanı")]
@@ -24,7 +30,7 @@ namespace Project.ENTİTİES.Models
 
         [Display(Name = "Çıkış Zamanı")]
         public DateTime CheckInOutTime { get; set; }
-        public int EmployeeCardID { get; set; } //Bir çalışanın bir ID cardı vardır.
+        public int EmployeeCardID { get; set; } //Bir çalışanın bir EmployeeCardı vardır.
         public int DrivingLicenseID { get; set; } //Bir çalışanın bir sürücü belgesi vardır.
         public int AllowRequestID { get; set; } //Bir çalışanın birden fazla izin isteği vardır.
         public int AdvancePaymentID { get; set; } //Bir çalışanın birden fazla avans ödemesi vardır.
@@ -35,16 +41,9 @@ namespace Project.ENTİTİES.Models
         
         public virtual EmployeeCard EmployeeCard { get; set; }
         public virtual DrivingLicense DrivingLicense { get; set; }
-
-        [ForeignKey("AllowRequestID")]
         public virtual List<AllowRequest> AllowRequests { get; set; }
-
-        [ForeignKey("AdvancePaymentID")]
         public virtual List<AdvancePayment> AdvancePayments { get; set; }
-        [ForeignKey("ExpenseID")]
         public virtual List<Expense> Expenses { get; set; }
-
-        [ForeignKey("ExtraWorktimeID")]
         public virtual  List<ExtraWorktime> ExtraWorktimes { get; set; }
     }
 }

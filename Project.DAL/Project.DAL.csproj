@@ -59,9 +59,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="StrategyPattern\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Project.ENTİTİES\Project.ENTİTİES.csproj">
       <Project>{DB36E8A4-0025-497E-A127-D64DEA99815D}</Project>

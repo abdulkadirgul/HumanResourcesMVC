@@ -46,6 +46,7 @@
     <Compile Include="Enums\AllowType.cs" />
     <Compile Include="Enums\DataStatus.cs" />
     <Compile Include="Enums\State.cs" />
+    <Compile Include="Enums\Status.cs" />
     <Compile Include="Enums\UserRole.cs" />
     <Compile Include="Models\CompanyAdmin.cs" />
     <Compile Include="Models\AdvancePayment.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="Models\Expense.cs" />
     <Compile Include="Models\ExtraWorktime.cs" />
     <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\MailTemplate.cs" />
     <Compile Include="Models\Unit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
