@@ -8,8 +8,10 @@ namespace Project.ENTİTİES.Enums
 {
     public enum DataStatus
     {
-        Inserted=1,
-        Updated=2,
-        Deleted=3
+        None,
+        Active,
+        Deleted,
+        Created,
+        Updated
     }
 }

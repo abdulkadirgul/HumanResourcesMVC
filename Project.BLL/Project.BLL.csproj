@@ -51,9 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DesignPatterns\GenericRepository\BaseRepo\BaseRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepository\Abstract\BaseRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\ConcreteRepo\AdvancePaymentRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\ConcreteRepo\AllowRequestRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepository\ConcreteRepo\AppUserAndRoleRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepository\ConcreteRepo\AppUserRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepository\ConcreteRepo\AppUserRoleRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\ConcreteRepo\CompanyAdminRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\ConcreteRepo\DepartmentRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\ConcreteRepo\DrivingLicenseRepository.cs" />
@@ -64,7 +67,6 @@
     <Compile Include="DesignPatterns\GenericRepository\ConcreteRepo\LocationRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\ConcreteRepo\UnitRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\InterfaceRepo\IRepository.cs" />
-    <Compile Include="DesignPatterns\SingletonPattern\Singleton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +82,13 @@
       <Project>{DB36E8A4-0025-497E-A127-D64DEA99815D}</Project>
       <Name>Project.ENTİTİES</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Project.MAP\Project.MAP.csproj">
+      <Project>{de00fd2a-2ea0-4c83-a927-447d2bb1ec62}</Project>
+      <Name>Project.MAP</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

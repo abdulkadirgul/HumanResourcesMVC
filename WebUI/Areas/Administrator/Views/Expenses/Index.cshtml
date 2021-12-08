@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Project.ENTİTİES.Models.Expense>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Administrator/Views/Shared/_AdminLayout.cshtml";
+}
+
+<p>
+    @Html.ActionLink("Yeni Masraf Ekle", "Create")
+</p>
+
+
+<div>
+    <div class="card-header">
+        <h2>Masraflar</h2>
+    </div>
+    <div>
+        <table class="table table-striped table-bordered" id="example-table">
+            <thead>
+                <tr>
+                    <th>Masraf ID</th>
+                    <th>Personel Adı-Soyadı</th>
+                    <th>TC Kimlik No</th>
+                    <th>Masraf Miktarı</th>
+                    <th> Açıklama</th>
+                    <th> Durumu </th>
+                    <th><i class=" icon-edit"></i> Düzenleme</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var masraf in Model)
+                {
+                    <tr>
+                        <td>@masraf.ID</td>
+                        <td>@masraf.Employee.FirstName @masraf.Employee.LastName  </td>
+                        <td>@masraf.Employee.TCKNo</td>
+                        <td>@masraf.Amount</td>
+                        <td>@masraf.Description</td>
+                        <td>@masraf.State</td>
+                        <td>
+
+                            @Html.ActionLink("Düzenle", "Edit", new { id = masraf.ID }) |
+                            @Html.ActionLink("Detaylar", "Details", new { id = masraf.ID }) |
+                            @Html.ActionLink("Sil", "Delete", new { id = masraf.ID })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

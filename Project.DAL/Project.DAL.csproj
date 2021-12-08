@@ -51,9 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Context\AppContext.cs" />
+    <Compile Include="Context\AppDbContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SingletonPatterns\Singleton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,4 +1,8 @@
 ﻿<!DOCTYPE html>
+@{ 
+    var user = Session["user"] as Project.ENTİTİES.Models.AppUser;
+    Layout = null;
+}
 <html>
 <head>
     <meta charset="utf-8" />
@@ -6,6 +10,8 @@
     <title>BA İNSAN KAYNAKLARI</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="icon" type="image/png" sizes="96x96" href="~/Content/İmages/favicon-96x96.png">
+    
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -23,8 +29,37 @@
                     <li>@Html.ActionLink("Ana Sayfa", "Index", "Home")</li>
                     <li>@Html.ActionLink("Hakkımızda", "About", "Home")</li>
                     <li>@Html.ActionLink("İletişim", "Contact", "Home")</li>
+
                 </ul>
-            </div>
+                <ul class="nav pull-right top-menu">
+                   
+                    <!-- user login dropdown start-->
+
+                    @if (user != null)
+                    {
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <img alt="" src="~/Content/img/avatar1_small.jpg">
+                                <span class="username">@user.UserName</span>
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu extended logout">
+                                <div class="log-arrow-up"></div>
+                                <li><a href="#"><i class=" icon-suitcase"></i>Profile</a></li>
+                                <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
+                                <li><a href="#"><i class="icon-bell-alt"></i> Notification</a></li>
+                                <li>
+                                    @Html.ActionLink("Çıkış Yap", "LogOut", "Home", user, new { @class = "btn" })
+                                </li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    { }
+                        <li>
+                            @Html.ActionLink("Giriş Yap", "Login", "Home", null, new { @class = "btn" })
+                        </li>
+                </div>
         </div>
 
 

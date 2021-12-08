@@ -9,29 +9,33 @@ using System.Web.Mvc;
 using Project.BLL.DesignPatterns.GenericRepository.ConcreteRepo;
 using Project.DAL.Context;
 using Project.ENTİTİES.Models;
-using Project.DAL.Context;
+
 
 namespace WebUI.Areas.Administrator.Controllers
 {
+
     public class AdvancePaymentsController : Controller
     {
-        Project.DAL.Context.AppContext db = new Project.DAL.Context.AppContext();
+        
+        AdvancePaymentRepository advancePaymentRepository = new AdvancePaymentRepository();
+        AppDbContext db = new AppDbContext();
 
         // GET: Administrator/AdvancePayments
         public ActionResult Index()
         {
-            var advancePayments = db.AdvancePayments.Include(a => a.Employee);
-            return View(advancePayments.ToList());
+            
+            return View(advancePaymentRepository.GetList());
         }
 
         // GET: Administrator/AdvancePayments/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AdvancePayment advancePayment = db.AdvancePayments.Find(id);
+            AdvancePayment advancePayment = advancePaymentRepository.GetById(id);
+            
             if (advancePayment == null)
             {
                 return HttpNotFound();
@@ -47,15 +51,15 @@ namespace WebUI.Areas.Administrator.Controllers
         }
 
         // POST: Administrator/AdvancePayments/Create
-       
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Amount,Description,IssueDate,ConfirmedDate,State,AdvancePaymentType,EmployeeID,CreatedDate,ModifiedDate,DeletedDate,Status")] AdvancePayment advancePayment)
         {
             if (ModelState.IsValid)
             {
-                db.AdvancePayments.Add(advancePayment);
-                db.SaveChanges();
+                advancePaymentRepository.Add(advancePayment);
                 return RedirectToAction("Index");
             }
 
@@ -64,13 +68,13 @@ namespace WebUI.Areas.Administrator.Controllers
         }
 
         // GET: Administrator/AdvancePayments/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AdvancePayment advancePayment = db.AdvancePayments.Find(id);
+            AdvancePayment advancePayment = advancePaymentRepository.GetById(id);
             if (advancePayment == null)
             {
                 return HttpNotFound();
@@ -80,15 +84,16 @@ namespace WebUI.Areas.Administrator.Controllers
         }
 
         // POST: Administrator/AdvancePayments/Edit/5
-        
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Amount,Description,IssueDate,ConfirmedDate,State,AdvancePaymentType,EmployeeID,CreatedDate,ModifiedDate,DeletedDate,Status")] AdvancePayment advancePayment)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(advancePayment).State = EntityState.Modified;
-                db.SaveChanges();
+                advancePaymentRepository.Update(advancePayment);
+             
                 return RedirectToAction("Index");
             }
             ViewBag.EmployeeID = new SelectList(db.Employees, "ID", "TCKNo", advancePayment.EmployeeID);
@@ -96,13 +101,13 @@ namespace WebUI.Areas.Administrator.Controllers
         }
 
         // GET: Administrator/AdvancePayments/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AdvancePayment advancePayment = db.AdvancePayments.Find(id);
+            AdvancePayment advancePayment = advancePaymentRepository.GetById(id);
             if (advancePayment == null)
             {
                 return HttpNotFound();
@@ -115,9 +120,8 @@ namespace WebUI.Areas.Administrator.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            AdvancePayment advancePayment = db.AdvancePayments.Find(id);
-            db.AdvancePayments.Remove(advancePayment);
-            db.SaveChanges();
+            AdvancePayment advancePayment = advancePaymentRepository.GetById(id);
+            advancePaymentRepository.RemoveForce(advancePayment);
             return RedirectToAction("Index");
         }
 

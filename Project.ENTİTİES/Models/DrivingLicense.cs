@@ -10,8 +10,13 @@ namespace Project.ENTİTİES.Models
     //Personel Sürücü Belgesi
     public class DrivingLicense:BaseEntity
     {
+        [Display(Name = "Adı")]
         public string FirstName { get; set; }
+
+        [Display(Name = "Soyadı")]
         public string LastName { get; set; }
+
+        [Display(Name = "Veriliş Tarihi")]
         public DateTime IssueDate { get; set; }
 
         [Display(Name = "Kart Numarası")]
@@ -29,8 +34,7 @@ namespace Project.ENTİTİES.Models
         [Display(Name = "Doğum Tarihi")]
         public DateTime BirthDate { get; set; }
 
-        
-        public virtual List<Employee> Employee { get; set; }
+
 
 
     }

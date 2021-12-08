@@ -53,6 +53,9 @@
   <ItemGroup>
     <Compile Include="Maps\AdvancePaymentMap.cs" />
     <Compile Include="Maps\AllowRequestMap.cs" />
+    <Compile Include="Maps\AppUserAndRoleMap.cs" />
+    <Compile Include="Maps\AppUserMap.cs" />
+    <Compile Include="Maps\AppUserRoleMap.cs" />
     <Compile Include="Maps\BaseMap.cs" />
     <Compile Include="Maps\CompanyAdminMap.cs" />
     <Compile Include="Maps\DepartmentMap.cs" />

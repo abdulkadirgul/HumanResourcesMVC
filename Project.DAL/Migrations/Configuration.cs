@@ -7,21 +7,32 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Project.DAL.Context.AppContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Project.DAL.Context.AppDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(Project.DAL.Context.AppContext context)
+        protected override void Seed(Project.DAL.Context.AppDbContext context)
         {
-            if(!context.CompanyAdmins.Any() )
+            AppUserRole appUserRole = new AppUserRole()
             {
-                context.CompanyAdmins.Add(
-                    new CompanyAdmin { Role = UserRole.Admin, Email = "admin@admin.com", Password="admin" });
-            }
-            
+                ID = new int(),
+                Role = "Admin",
+                CreatedDate = DateTime.Now
+            };
+
+            AppUser appUser = new AppUser()
+            {
+                ID = 1,
+                UserName = "Admin",
+                Password = "1234",
+                Email = "admin@gmail.com"
+
+            };
+
         }
     }
 }
+

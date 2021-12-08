@@ -1,0 +1,92 @@
+﻿
+@model IEnumerable<Project.ENTİTİES.Models.EmployeeCard>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Administrator/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<p>
+    @Html.ActionLink("Yeni Kart Ekle", "Create")
+</p>
+
+
+<div class="card">
+    <div class="card-header">
+        <h2>Çalışan Kartları</h2>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Kart ID</th>
+                    <th>Personel Adı-Soyadı</th>
+                    <th>TC Kimlik No</th>
+                    <th>Seri No</th>
+                    <th>Doğum Tarihi</th>
+                    <th> Doğum Yeri</th>
+                    <th>Kan Grubu</th>
+                    <th>Baba Adı</th>
+                    <th>Anne Adı</th>
+                    <th>Medeni Hali</th>
+                    <th><i class=" icon-edit"></i> Düzenleme</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var kart in Model)
+                {
+                    <tr>
+                        <td>@kart.ID</td>
+                        <td>@kart.FirstName @kart.LastName  </td>
+                        <td>@kart.TCKNo</td>
+                        <td>@kart.SerialNo</td>
+                        <td>@kart.IssueDate</td>
+                        <td>@kart.IssuePlace</td>
+                        <td>@kart.BloodGroup</td>
+                        <td>@kart.FatherName</td>
+                        <td>@kart.MotherName</td>
+                        <td>@kart.MaritalStatus</td>
+
+                        <td>
+
+                            @Html.ActionLink("Düzenle", "Edit", new { id = kart.ID }) |
+                            @Html.ActionLink("Detaylar", "Details", new { id = kart.ID }) |
+                            @Html.ActionLink("Sil", "Delete", new { id = kart.ID })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@*<div class="container">
+
+    @foreach (var kart in Model)
+    {<div class="card cell-border col-lg-4">
+
+            <div class="card-header">
+                <h3> @kart.FirstName @kart.LastName </h3>
+            </div>
+            <div class="card-body" style="text-decoration-color:initial">
+                <h4>Doğum yeri: @kart.IssuePlace </h4>
+                <h4>Doğum tarihi: @kart.IssueDate </h4>
+            </div>
+
+
+
+
+        </div>
+    }
+</div>*@
+
+<script src="~/Content/DataTables-1.11.3/js/dataTables.bootstrap.min.js"></script>
+<link href="~/Content/DataTables-1.11.3/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<script>
+    $("#example").DataTable();
+</script>
+
+
+

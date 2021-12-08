@@ -25,6 +25,7 @@ C:\Users\Monster\Desktop\HumanResProject\Project.DAL\bin\Debug\EntityFramework.S
 C:\Users\Monster\Desktop\HumanResProject\Project.DAL\bin\Debug\Project.ENTİTİES.dll
 C:\Users\Monster\Desktop\HumanResProject\Project.DAL\bin\Debug\Project.MAP.dll
 C:\Users\Monster\Desktop\HumanResProject\Project.DAL\bin\Debug\Project.ENTİTİES.pdb
+C:\Users\Monster\Desktop\HumanResProject\Project.DAL\bin\Debug\Project.ENTİTİES.dll.config
 C:\Users\Monster\Desktop\HumanResProject\Project.DAL\bin\Debug\Project.MAP.pdb
 C:\Users\Monster\Desktop\HumanResProject\Project.DAL\bin\Debug\Project.MAP.dll.config
 C:\Users\Monster\Desktop\HumanResProject\Project.DAL\bin\Debug\EntityFramework.xml

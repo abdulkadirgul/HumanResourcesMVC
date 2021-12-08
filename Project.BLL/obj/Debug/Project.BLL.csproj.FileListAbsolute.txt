@@ -17,8 +17,15 @@ C:\Users\Monster\Desktop\HumanResProject\Project.BLL\bin\Debug\Project.BLL.dll
 C:\Users\Monster\Desktop\HumanResProject\Project.BLL\bin\Debug\Project.BLL.pdb
 C:\Users\Monster\Desktop\HumanResProject\Project.BLL\bin\Debug\EntityFramework.dll
 C:\Users\Monster\Desktop\HumanResProject\Project.BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Monster\Desktop\HumanResProject\Project.BLL\bin\Debug\Project.DAL.dll
 C:\Users\Monster\Desktop\HumanResProject\Project.BLL\bin\Debug\Project.ENTİTİES.dll
+C:\Users\Monster\Desktop\HumanResProject\Project.BLL\bin\Debug\Project.MAP.dll
+C:\Users\Monster\Desktop\HumanResProject\Project.BLL\bin\Debug\Project.DAL.pdb
+C:\Users\Monster\Desktop\HumanResProject\Project.BLL\bin\Debug\Project.DAL.dll.config
 C:\Users\Monster\Desktop\HumanResProject\Project.BLL\bin\Debug\Project.ENTİTİES.pdb
+C:\Users\Monster\Desktop\HumanResProject\Project.BLL\bin\Debug\Project.ENTİTİES.dll.config
+C:\Users\Monster\Desktop\HumanResProject\Project.BLL\bin\Debug\Project.MAP.pdb
+C:\Users\Monster\Desktop\HumanResProject\Project.BLL\bin\Debug\Project.MAP.dll.config
 C:\Users\Monster\Desktop\HumanResProject\Project.BLL\bin\Debug\EntityFramework.xml
 C:\Users\Monster\Desktop\HumanResProject\Project.BLL\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Monster\Desktop\HumanResProject\Project.BLL\obj\Debug\Project.BLL.csproj.AssemblyReference.cache
@@ -26,9 +33,3 @@ C:\Users\Monster\Desktop\HumanResProject\Project.BLL\obj\Debug\Project.BLL.cspro
 C:\Users\Monster\Desktop\HumanResProject\Project.BLL\obj\Debug\Project.BLL.csproj.CopyComplete
 C:\Users\Monster\Desktop\HumanResProject\Project.BLL\obj\Debug\Project.BLL.dll
 C:\Users\Monster\Desktop\HumanResProject\Project.BLL\obj\Debug\Project.BLL.pdb
-C:\Users\Monster\Desktop\HumanResProject\Project.BLL\bin\Debug\Project.DAL.dll
-C:\Users\Monster\Desktop\HumanResProject\Project.BLL\bin\Debug\Project.MAP.dll
-C:\Users\Monster\Desktop\HumanResProject\Project.BLL\bin\Debug\Project.DAL.pdb
-C:\Users\Monster\Desktop\HumanResProject\Project.BLL\bin\Debug\Project.DAL.dll.config
-C:\Users\Monster\Desktop\HumanResProject\Project.BLL\bin\Debug\Project.MAP.pdb
-C:\Users\Monster\Desktop\HumanResProject\Project.BLL\bin\Debug\Project.MAP.dll.config

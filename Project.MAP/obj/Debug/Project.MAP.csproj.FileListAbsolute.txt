@@ -33,6 +33,7 @@ C:\Users\Monster\Desktop\HumanResProject\Project.MAP\bin\Debug\EntityFramework.d
 C:\Users\Monster\Desktop\HumanResProject\Project.MAP\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Monster\Desktop\HumanResProject\Project.MAP\bin\Debug\Project.ENTİTİES.dll
 C:\Users\Monster\Desktop\HumanResProject\Project.MAP\bin\Debug\Project.ENTİTİES.pdb
+C:\Users\Monster\Desktop\HumanResProject\Project.MAP\bin\Debug\Project.ENTİTİES.dll.config
 C:\Users\Monster\Desktop\HumanResProject\Project.MAP\bin\Debug\EntityFramework.xml
 C:\Users\Monster\Desktop\HumanResProject\Project.MAP\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Monster\Desktop\HumanResProject\Project.MAP\obj\Debug\Project.MAP.csproj.AssemblyReference.cache

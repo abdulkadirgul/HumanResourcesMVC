@@ -1,0 +1,30 @@
+﻿@model Project.ENTİTİES.ViewModels.LoginVM
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
+<link href="~/Content/css/bootstrap-reset.css" rel="stylesheet">
+<link href="~/Content/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+<link href="~/Content/css/style.css" rel="stylesheet">
+<link href="~/Content/css/style-responsive.css" rel="stylesheet" />
+<div class="container">
+
+    <form class="form-signin" method="post">
+        <h2 class="form-signin-heading">YÖNETİCİ GİRİŞİ</h2>
+        <div class="login-wrap">
+            @Html.TextBoxFor(x => x.UserName, new { @class = "form-control", placeholder = "kullanıcı adı" })
+            @Html.ValidationMessageFor(x => x.UserName)
+            @Html.TextBoxFor(x => x.Password, new { @class = "form-control", placeholder = "şifre", type = "password" })
+            @Html.ValidationMessageFor(x => x.Password)
+            <button class="btn btn-lg btn-login btn-block" type="submit">GİRİŞ YAP</button>
+
+
+
+        </div>
+
+
+    </form>
+
+</div>

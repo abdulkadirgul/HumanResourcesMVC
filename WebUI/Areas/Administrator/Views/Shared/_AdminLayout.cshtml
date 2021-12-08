@@ -1,4 +1,8 @@
 ﻿<!DOCTYPE html>
+@{
+    var user = Session["user"] as Project.ENTİTİES.Models.AppUser;
+    Layout = null;
+}
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -6,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mosaddek">
     <meta name="keyword" content="Human Resources, İnsan Kaynakları, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-    <link rel="shortcut icon" href="~/Content/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="~/Content/İmages/favicon-96x96.png">
 
     <title>BA İnsan Kaynakları </title>
 
@@ -20,6 +24,10 @@
     <!-- Custom styles for this template -->
     <link href="~/Content/css/style.css" rel="stylesheet">
     <link href="~/Content/css/style-responsive.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
+
+    <link href="~/Content/Datatablejs_css/datatables-bootstrap3.css" rel="stylesheet" />
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
@@ -37,7 +45,7 @@
                 <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
             </div>
             <!--logo start-->
-            <a href="~/Content/index.html" class="logo">BA <span>İnsan Kaynakları</span></a>
+            <a class="logo">BA <span>İnsan Kaynakları</span></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
@@ -252,24 +260,39 @@
                     <li>
                         <input type="text" class="form-control search" placeholder="Search">
                     </li>
-                    <!-- user login dropdown start-->
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="~/Content/#">
-                            <img alt="" src="~/Content/img/avatar1_small.jpg">
-                            <span class="username">Jhon Doue</span>
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu extended logout">
-                            <div class="log-arrow-up"></div>
-                            <li><a href="~/Content/#"><i class=" icon-suitcase"></i>Profile</a></li>
-                            <li><a href="~/Content/#"><i class="icon-cog"></i> Settings</a></li>
-                            <li><a href="~/Content/#"><i class="icon-bell-alt"></i> Notification</a></li>
-                            <li><a href="~/Content/login.html"><i class="icon-key"></i> Log Out</a></li>
-                        </ul>
-                    </li>
-                    <!-- user login dropdown end -->
-                </ul>
-                <!--search & user info end-->
+                    <ul class="nav pull-right top-menu">
+
+                        <!-- user login dropdown start-->
+
+                        @if (user != null)
+                        {
+                            <li class="dropdown">
+                                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                    <img alt="" src="~/Content/img/avatar1_small.jpg">
+                                    <span class="username">@user.UserName</span>
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu extended logout">
+                                    <div class="log-arrow-up"></div>
+                                    <li><a href="#"><i class=" icon-suitcase"></i>Profile</a></li>
+                                    <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
+                                    <li><a href="#"><i class="icon-bell-alt"></i> Notification</a></li>
+                                    <li>
+                                        @Html.ActionLink("Çıkış Yap", "LogOut", "Home", user, new { @class = "btn" })
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                @Html.ActionLink("Giriş Yap", "Login", "Home", null, new { @class = "btn" })
+                            </li>
+                        }
+
+
+                    </ul>
+                    <!--search & user info end-->
             </div>
         </header>
         <!--header end-->
@@ -279,15 +302,46 @@
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
                     <li>
-                        <a href="~/Content/index.html">
+                        <a>
                             <i class="icon-dashboard"></i>
-                            <span>Dashboard</span>
+                            <span>Admin Paneli</span>
                         </a>
                     </li>
 
                     <li class="sub-menu">
                         <a href="~/Content/javascript:;">
-                            <i class="icon-tags"></i>
+                            <i class="icon-user"></i>
+                            <span>Çalışanlar </span>
+                        </a>
+                        <ul class="sub">
+                            <li>
+                                @Html.ActionLink("Çalışanlar İşlemleri", "Index", "Employees")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Çalışan Ekle", "Create", "Employees")
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="sub-menu">
+                        <a href="~/Content/javascript:;">
+                            <i class="icon-info"></i>
+                            <span>Çalışan Kartı </span>
+                        </a>
+                        <ul class="sub">
+                            <li>
+                                @Html.ActionLink("Çalışan Kartı Listesi", "Index", "EmployeeCards")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Çalışan Kartı Ekleme", "Create", "EmployeeCards")
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="sub-menu">
+                        <a href="~/Content/javascript:;">
+                            <i class="icon-money"></i>
                             <span>Avans Yönetimi </span>
                         </a>
                         <ul class="sub">
@@ -302,39 +356,47 @@
 
                     <li class="sub-menu">
                         <a href="~/Content/javascript:;">
-                            <i class="icon-folder-open"></i>
-                            <span>Çalışanlar </span>
+                            <i class="icon-beer"></i>
+                            <span>İzinler</span>
                         </a>
                         <ul class="sub">
                             <li>
-                               @Html.ActionLink("Çalışanlar Listesi","Index","Employees")
+                                @Html.ActionLink("İzin Listesi", "Index", "AllowRequests")
                             </li>
                             <li>
-                                @Html.ActionLink("Çalışan Ekle", "Create", "Employees")
+                                @Html.ActionLink("İzin Ekleme", "Create", "AllowRequests")
                             </li>
                         </ul>
                     </li>
 
                     <li class="sub-menu">
                         <a href="~/Content/javascript:;">
-                            <i class="icon-user"></i>
-                            <span>Kullanıcı İşlemleri</span>
+                            <i class="icon-money"></i>
+                            <span>Masraflar </span>
                         </a>
                         <ul class="sub">
                             <li>
-                                @Html.ActionLink("Kullanıcı Listesi", "Index", "AppUser")
+                                @Html.ActionLink("Masraf Listesi", "Index", "Expenses")
                             </li>
                             <li>
-                                @Html.ActionLink("Kullanıcı Ekleme", "Add", "AppUser")
+                                @Html.ActionLink("Masraf Ekleme", "Create", "Expenses")
                             </li>
                         </ul>
                     </li>
 
-                    <li>
-                        
-                    </li>
-                    <li>
-                       
+                    <li class="sub-menu">
+                        <a href="~/Content/javascript:;">
+                            <i class="icon-time"></i>
+                            <span>Fazla Mesailer</span>
+                        </a>
+                        <ul class="sub">
+                            <li>
+                                @Html.ActionLink("Mesai Listesi", "Index", "ExtraWorktimes")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Mesai Ekleme", "Create", "ExtraWorktimes")
+                            </li>
+                        </ul>
                     </li>
 
 
@@ -354,7 +416,7 @@
         <footer class="site-footer">
             <div class="text-center">
                 2021 &copy; BA İNSAN KAYNALARI YÖNETİMİ
-                <a href="~/Content/#" class="go-top">
+                <a class="go-top">
                     <i class="icon-angle-up"></i>
                 </a>
             </div>
@@ -387,26 +449,35 @@
 
     <script>
 
-      //owl carousel
+        //owl carousel
 
-      $(document).ready(function() {
-          $("#owl-demo").owlCarousel({
-              navigation : true,
-              slideSpeed : 300,
-              paginationSpeed : 400,
-              singleItem : true,
-			  autoPlay:true
+        $(document).ready(function () {
+            $("#owl-demo").owlCarousel({
+                navigation: true,
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                singleItem: true,
+                autoPlay: true
 
-          });
-      });
+            });
+        });
 
-      //custom select box
+        //custom select box
 
-      $(function(){
-          $('select.styled').customSelect();
-      });
+        $(function () {
+            $('select.styled').customSelect();
+        });
 
     </script>
 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/Datatablejs_css/datatables-bootstrap3.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#example-table').dataTable();
+        });
+    </script>
 </body>
 </html>
