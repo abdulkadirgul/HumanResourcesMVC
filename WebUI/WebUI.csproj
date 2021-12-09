@@ -2007,6 +2007,8 @@
     <Content Include="Areas\Administrator\Views\EmployeeCards\Details.cshtml" />
     <Content Include="Areas\Administrator\Views\EmployeeCards\Edit.cshtml" />
     <Content Include="Areas\Administrator\Views\EmployeeCards\Index.cshtml" />
+    <Content Include="Areas\Administrator\Views\Home\LogOut.cshtml" />
+    <Content Include="Areas\Administrator\Views\Home\Login.cshtml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />

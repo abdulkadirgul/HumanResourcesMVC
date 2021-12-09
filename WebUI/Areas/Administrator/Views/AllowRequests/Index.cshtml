@@ -5,10 +5,29 @@
     Layout = "~/Areas/Administrator/Views/Shared/_AdminLayout.cshtml";
 }
 
-<p>
-    @Html.ActionLink("Yeni İzin Ekle", "Create")
-</p>
 
+
+<script>
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+
+
+
+        document.body.innerHTML = printContents;
+
+
+
+        window.print();
+
+
+
+        document.body.innerHTML = originalContents;
+
+
+
+    }
+</script>
 
 <div>
     <div class="card-header">
@@ -33,25 +52,33 @@
             <tbody>
                 @foreach (var izin in Model)
                 {
-                <tr>
+                    <tr>
 
-                    <td>@izin.Employee.FirstName @izin.Employee.LastName  </td>
-                    <td>@izin.Employee.TCKNo</td>
-                    <td>@izin.AllowType</td>
-                    <td>@izin.StartDate</td>
-                    <td>@izin.EndDate</td>
-                    <td>@izin.TotalAllowTime</td>
-                    <td>@izin.Description</td>
-                    <td>@izin.State</td>
-                    <td>
+                        <td>@izin.Employee.FirstName @izin.Employee.LastName  </td>
+                        <td>@izin.Employee.TCKNo</td>
+                        <td>@izin.AllowType</td>
+                        <td>@izin.StartDate</td>
+                        <td>@izin.EndDate</td>
+                        <td>@izin.TotalAllowTime</td>
+                        <td>@izin.Description</td>
+                        <td>@izin.State</td>
+                        <td>
 
-                        @Html.ActionLink("Düzenle", "Edit", new { id = izin.ID }) |
-                        @Html.ActionLink("Detaylar", "Details", new { id = izin.ID }) |
-                        @Html.ActionLink("Sil", "Delete", new { id = izin.ID })
-                    </td>
-                </tr>
+                            @Html.ActionLink("Düzenle", "Edit", new { id = izin.ID }) |
+                            @Html.ActionLink("Detaylar", "Details", new { id = izin.ID }) |
+                            @Html.ActionLink("Sil", "Delete", new { id = izin.ID })
+                        </td>
+                    </tr>
                 }
             </tbody>
         </table>
+
+        <button type="button" class="btn btn-primary" onclick="printDiv('printMe')" style="margin-right">
+            Yazdır
+        </button>
     </div>
+    <h3>
+        @Html.ActionLink("Yeni İzin Ekle", "Create")
+    </h3>
+
 </div>

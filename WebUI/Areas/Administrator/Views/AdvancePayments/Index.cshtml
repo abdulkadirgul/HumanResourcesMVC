@@ -5,90 +5,76 @@
     Layout = "~/Areas/Administrator/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Index</h2>
+<script>
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table table-striped table-bordered" id="example-table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Employee.TCKNo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Amount)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IssueDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ConfirmedDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.State)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AdvancePaymentType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ModifiedDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DeletedDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Employee.TCKNo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Amount)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IssueDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ConfirmedDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.State)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AdvancePaymentType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ModifiedDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DeletedDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
 
-</table>
+        document.body.innerHTML = printContents;
+
+
+
+        window.print();
+
+
+
+        document.body.innerHTML = originalContents;
+
+
+
+    }
+</script>
+
+<div>
+    <div class="card-header">
+        <h2>Avanslar</h2>
+    </div>
+    <div>
+        <table class="table table-striped table-bordered" id="example-table">
+            <thead>
+                <tr>
+                    <th>Personel Adı-Soyadı</th>
+                    <th>TC Kimlik No</th>
+                    <th>Avans Miktarı</th>
+                    <th>Avans Türü</th>
+                    <th>oluşturma Tarihi</th>
+                    <th>Toplam Süre</th>
+                    <th> Durumu </th>
+                    <th><i class=" icon-edit"></i> Düzenleme</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var avans in Model)
+                {
+                    <tr>
+
+                        <td>@avans.Employee.FirstName @avans.Employee.LastName  </td>
+                        <td>@avans.Employee.TCKNo</td>
+                        <td>@avans.Amount</td>
+                        <td>@avans.AdvancePaymentType</td>
+                        <td>@avans.CreatedDate</td>
+                        <td>@avans.Description</td>
+                        <td>@avans.State</td>
+                        <td>
+
+                            @Html.ActionLink("Düzenle", "Edit", new { id = avans.ID }) |
+                            @Html.ActionLink("Detaylar", "Details", new { id =avans.ID }) |
+                            @Html.ActionLink("Sil", "Delete", new { id = avans.ID })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <button type="button" class="btn btn-primary" onclick="printDiv('printMe')" style="margin-right">
+            Yazdır
+        </button>
+    </div>
+    <h3>
+        @Html.ActionLink("Yeni Avans Ekle", "Create")
+    </h3>
+
+</div>

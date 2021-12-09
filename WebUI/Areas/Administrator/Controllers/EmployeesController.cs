@@ -13,6 +13,7 @@ using Project.ENTİTİES.Models;
 
 namespace WebUI.Areas.Administrator.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class EmployeesController : Controller
     {
         EmployeeRepository employeeRepository = new EmployeeRepository();

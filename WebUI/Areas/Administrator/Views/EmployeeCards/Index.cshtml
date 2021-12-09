@@ -6,6 +6,27 @@
     Layout = "~/Areas/Administrator/Views/Shared/_AdminLayout.cshtml";
 }
 
+<script>
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+
+
+
+        document.body.innerHTML = printContents;
+
+
+
+        window.print();
+
+
+
+        document.body.innerHTML = originalContents;
+
+
+
+    }
+</script>
 
 <div class="card">
     <div class="card-header">
@@ -52,7 +73,11 @@
                 }
             </tbody>
         </table>
-        
+
+        <button type="button" class="btn btn-primary" onclick="printDiv('printMe')" style="margin-right">
+            Kartı Yazdır
+        </button>
+
     </div>
     <h3 class="text-capitalize">
         @Html.ActionLink("Yeni Kart Ekle", "Create")

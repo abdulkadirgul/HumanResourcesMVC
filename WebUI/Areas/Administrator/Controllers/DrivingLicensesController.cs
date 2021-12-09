@@ -12,6 +12,7 @@ using Project.ENTİTİES.Models;
 
 namespace WebUI.Areas.Administrator.Controllers
 {
+    //[Authorize(Roles = "Admin")]
     public class DrivingLicensesController : Controller
     {
         DrivingLicenseRepository drivingLicenseRepository = new DrivingLicenseRepository();

@@ -5,10 +5,29 @@
     Layout = "~/Areas/Administrator/Views/Shared/_AdminLayout.cshtml";
 }
 
-<p>
-    @Html.ActionLink("Yeni Masraf Ekle", "Create")
-</p>
 
+
+<script>
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+
+
+
+        document.body.innerHTML = printContents;
+
+
+
+        window.print();
+
+
+
+        document.body.innerHTML = originalContents;
+
+
+
+    }
+</script>
 
 <div>
     <div class="card-header">
@@ -48,7 +67,14 @@
                 }
             </tbody>
         </table>
+
+        <button type="button" class="btn btn-primary" onclick="printDiv('printMe')" style="margin-right">
+            Yazdır
+        </button>
     </div>
+    <h3>
+        @Html.ActionLink("Yeni Masraf Ekle", "Create")
+    </h3>
 </div>
 
 
