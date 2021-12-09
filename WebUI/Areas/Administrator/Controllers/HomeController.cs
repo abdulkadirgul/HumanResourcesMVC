@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace WebUI.Areas.Administrator.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class HomeController : Controller
     {
         // GET: Administrator/Home

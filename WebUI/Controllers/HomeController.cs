@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using WebUI.Attiributes;
 using WebUI.Models.ViewModels;
 
 namespace WebUI.Controllers
@@ -45,7 +46,7 @@ namespace WebUI.Controllers
         }
 
         [HttpPost]
-        //[AcFilter]
+        [ActFilter]
         public ActionResult Login(LoginVM login)
         {
 
@@ -68,7 +69,7 @@ namespace WebUI.Controllers
                         FormsAuthentication.SetAuthCookie(user.UserName, true);
 
 
-                        return RedirectToAction("Index", "Home", new { area = "Administrator" });
+                        return RedirectToAction("Index");
                     }
                     else
                     {
